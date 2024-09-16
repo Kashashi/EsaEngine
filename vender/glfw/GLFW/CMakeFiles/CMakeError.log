@@ -1,0 +1,65 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: D:/DerWorvie/GLFW/GLFW/CMakeFiles/CMakeScratch/TryCompile-f3im99
+
+Run Build Command(s):C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f Makefile cmTC_3eb03/fast && C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_3eb03.dir\build.make CMakeFiles/cmTC_3eb03.dir/build
+mingw32-make.exe[1]: Entering directory 'D:/DerWorvie/GLFW/GLFW/CMakeFiles/CMakeScratch/TryCompile-f3im99'
+Building C object CMakeFiles/cmTC_3eb03.dir/src.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles\cmTC_3eb03.dir\src.c.obj -c D:\DerWorvie\GLFW\GLFW\CMakeFiles\CMakeScratch\TryCompile-f3im99\src.c
+Linking C executable cmTC_3eb03.exe
+D:\tool\cmake-3.25.1-windows-x86_64\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_3eb03.dir\link.txt --verbose=1
+D:\tool\cmake-3.25.1-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\cmTC_3eb03.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\ar.exe qc CMakeFiles\cmTC_3eb03.dir/objects.a @CMakeFiles\cmTC_3eb03.dir\objects1
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe -Wl,--whole-archive CMakeFiles\cmTC_3eb03.dir/objects.a -Wl,--no-whole-archive -o cmTC_3eb03.exe -Wl,--out-implib,libcmTC_3eb03.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_3eb03.dir\linkLibs.rsp
+C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\cmTC_3eb03.dir/objects.a(src.c.obj):src.c:(.text+0x35): undefined reference to `pthread_create'
+C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\cmTC_3eb03.dir/objects.a(src.c.obj):src.c:(.text+0x41): undefined reference to `pthread_detach'
+C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\cmTC_3eb03.dir/objects.a(src.c.obj):src.c:(.text+0x4d): undefined reference to `pthread_cancel'
+C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\cmTC_3eb03.dir/objects.a(src.c.obj):src.c:(.text+0x5e): undefined reference to `pthread_join'
+C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: CMakeFiles\cmTC_3eb03.dir/objects.a(src.c.obj):src.c:(.text+0x68): undefined reference to `pthread_exit'
+collect2.exe: error: ld returned 1 exit status
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_3eb03.dir\build.make:100: cmTC_3eb03.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'D:/DerWorvie/GLFW/GLFW/CMakeFiles/CMakeScratch/TryCompile-f3im99'
+mingw32-make.exe: *** [Makefile:126: cmTC_3eb03/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: D:/DerWorvie/GLFW/GLFW/CMakeFiles/CMakeScratch/TryCompile-wh7687
+
+Run Build Command(s):C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe -f Makefile cmTC_ca87c/fast && C:/PROGRA~1/CODEBL~1/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_ca87c.dir\build.make CMakeFiles/cmTC_ca87c.dir/build
+mingw32-make.exe[1]: Entering directory 'D:/DerWorvie/GLFW/GLFW/CMakeFiles/CMakeScratch/TryCompile-wh7687'
+Building C object CMakeFiles/cmTC_ca87c.dir/CheckFunctionExists.c.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles\cmTC_ca87c.dir\CheckFunctionExists.c.obj -c D:\DerWorvie\GLFW\GLFW\CMakeFiles\CMakeScratch\TryCompile-wh7687\CheckFunctionExists.c
+Linking C executable cmTC_ca87c.exe
+D:\tool\cmake-3.25.1-windows-x86_64\bin\cmake.exe -E cmake_link_script CMakeFiles\cmTC_ca87c.dir\link.txt --verbose=1
+D:\tool\cmake-3.25.1-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\cmTC_ca87c.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\ar.exe qc CMakeFiles\cmTC_ca87c.dir/objects.a @CMakeFiles\cmTC_ca87c.dir\objects1
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe  -DCHECK_FUNCTION_EXISTS=pthread_create -Wl,--whole-archive CMakeFiles\cmTC_ca87c.dir/objects.a -Wl,--no-whole-archive -o cmTC_ca87c.exe -Wl,--out-implib,libcmTC_ca87c.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cmTC_ca87c.dir\linkLibs.rsp
+C:/PROGRA~1/MINGW-~1/X86_64~1.0-R/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/12.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lpthreads: No such file or directory
+collect2.exe: error: ld returned 1 exit status
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_ca87c.dir\build.make:100: cmTC_ca87c.exe] Error 1
+mingw32-make.exe[1]: Leaving directory 'D:/DerWorvie/GLFW/GLFW/CMakeFiles/CMakeScratch/TryCompile-wh7687'
+mingw32-make.exe: *** [Makefile:126: cmTC_ca87c/fast] Error 2
+
+
+
