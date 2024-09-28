@@ -1,3 +1,0 @@
-D:\tool\cmake-3.25.1-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\simple.dir/objects.a
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\ar.exe qc CMakeFiles\simple.dir/objects.a @CMakeFiles\simple.dir\objects1
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe -mwindows -Wl,--whole-archive CMakeFiles\simple.dir/objects.a -Wl,--no-whole-archive -o simple.exe -Wl,--out-implib,libsimple.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\simple.dir\linkLibs.rsp

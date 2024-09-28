@@ -1,3 +1,0 @@
-D:\tool\cmake-3.25.1-windows-x86_64\bin\cmake.exe -E rm -f CMakeFiles\glfw.dir/objects.a
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\ar.exe qc CMakeFiles\glfw.dir/objects.a @CMakeFiles\glfw.dir\objects1
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-R\mingw64\bin\gcc.exe -Wl,--high-entropy-va -Wl,--dynamicbase -Wl,--nxcompat  -shared -o glfw3.dll -Wl,--out-implib,libglfw3dll.a -Wl,--major-image-version,3,--minor-image-version,3 -Wl,--whole-archive CMakeFiles\glfw.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\glfw.dir\linkLibs.rsp
