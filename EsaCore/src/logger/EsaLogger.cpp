@@ -10,7 +10,6 @@
 #include <ctime>
 
 namespace Kashashi{
-EsaLogger::EsaLogger(){}
 EsaLogger::~EsaLogger(){
 	if (m_logFile.is_open()){
 		m_logFile.close();
@@ -30,9 +29,9 @@ void EsaLogger::setFileName(const std::string& fileName){
 void EsaLogger::setPathName(const std::string& pathName){
 	m_pathName = utf8_to_utf16(pathName);
 }
-void EsaLogger::writeLog(const std::string& 紀錄文字, std::function<std::string()> ExtraInfomation){
+void EsaLogger::writeLog(std::function<std::string()> ExtraInfomation){
 	auto now = std::chrono::system_clock::now();
 	auto now_time = std::chrono::system_clock::to_time_t(now);
-	m_logFile << std::put_time(std::localtime(&now_time), "%Y-%m-%d %H:%M:%S") << ": " << 紀錄文字 << ": " << ExtraInfomation() << std::endl;
+	m_logFile << std::put_time(std::localtime(&now_time), "%Y-%m-%d %H:%M:%S") << ":" << ExtraInfomation() << std::endl;
 }
 }
