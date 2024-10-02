@@ -3,7 +3,7 @@
 
 #include
 
-class debugMode{
+class debugInfo{
 public:
 	
 };
